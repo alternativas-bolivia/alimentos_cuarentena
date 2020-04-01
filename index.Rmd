@@ -15,7 +15,7 @@ library(fontawesome)
 
 Inicio
 =====================================  
-![](img/intro_1.png)
+![](img/landing.png)
 
 Sobre el proyecto
 =====================================  
