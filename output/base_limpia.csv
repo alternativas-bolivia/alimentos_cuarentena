@@ -1,0 +1,57 @@
+departamento,municipio,contacto_nombre,ocupacion,abastecimiento,disponibilidad,dificultades,dificultades_1,suficiente,mecanismos
+LA PAZ,Palca,Efraín Rodriguez,Servidor/Autoridad Pública,Mercado Barrial,Cada vez menos,Algunos productos ya no están disponibles,NA,A corto plazo habrá desabastecimiento,Coordinación con actores locales
+LA PAZ,Mecapaca,Ilver Poma,Servidor/Autoridad Pública,NA,Normal,Han subido mucho los precios,Restricción vehicular,A corto plazo habrá desabastecimiento,Coordinación con actores locales
+LA PAZ,Viacha,Vicente Salazar,Servidor/Autoridad Pública,Mercado Municipal,Cada vez menos,Restricción vehicular,Perjudicados estan en la zona periurbana o comunidades alejadas,No habrá desabastecimiento,Coordinación con actores locales
+LA PAZ,Achocalla,Julio Yujra,Productor,Producción propia,Cada vez menos,Ninguna,NA,A largo plazo habrá desabastecimiento,Coordinación con actores locales
+LA PAZ,Achocalla,Jenny Perez,Servidor/Autoridad Pública,Mercado Municipal,Cada vez menos,Restricción vehicular,NA,A largo plazo habrá desabastecimiento,Coordinación con otros niveles de gobierno
+LA PAZ,Laja,Oscar Mamani,Servidor/Autoridad Pública,Ferias,Cada vez menos,Perjudicados estan en la zona periurbana o comunidades alejadas,NA,A corto plazo habrá desabastecimiento,Coordinación con actores locales
+LA PAZ,Laja,Isaac Condori,Servidor/Autoridad Pública,NA,Cada vez menos,Restricción vehicular,NA,A largo plazo habrá desabastecimiento,Coordinación con actores locales
+LA PAZ,Pucarani,Macario Mendoza,Servidor/Autoridad Pública,Mercado Municipal,Normal,Han subido mucho los precios,Restricción vehicular,A corto plazo habrá desabastecimiento,Nada
+LA PAZ,Coroico,Armando Huaranca,Servidor/Autoridad Pública,Mercado Municipal,Cada vez menos,Restricción vehicular,Algunos productos ya no están disponibles,A corto plazo habrá desabastecimiento,Nada
+LA PAZ,Coroico,Oscar Canqui,Profesional independiente,Tiendas de barrio,Cada vez menos,Restricción vehicular,Algunos productos ya no están disponibles,A corto plazo habrá desabastecimiento,Nada
+LA PAZ,Caranavi,Vicente Manrique,Servidor/Autoridad Pública,Mercado Municipal,Hay escacez,Restricción vehicular,NA,A corto plazo habrá desabastecimiento,Coordinación con actores locales
+LA PAZ,Caranavi,Gladiz Jahuira,Empleada(o) sector privado,Mercado Barrial,Cada vez menos,Restricción vehicular,NA,A corto plazo habrá desabastecimiento,No sabe
+LA PAZ,Apolo,Eduard Cordero,Estudiante,Producción propia,Cada vez menos,Algunos productos ya no están disponibles,NA,A corto plazo habrá desabastecimiento,Coordinación con actores locales
+LA PAZ,Tiahuanacu,oscar Llanque,Empleada(o) sector privado,Producción propia,Cada vez menos,Restricción vehicular,Algunos productos ya no están disponibles,A corto plazo habrá desabastecimiento,Coordinación con actores locales
+LA PAZ,Palos Blancos,Eber Misange,Servidor/Autoridad Pública,Ferias,Normal,Algunos productos ya no están disponibles,Restricción vehicular,A largo plazo habrá desabastecimiento,Nada
+LA PAZ,Palos Blancos,Andrea Quispe,Empleada(o) del hogar,Ferias,Normal,Han subido mucho los precios,NA,A largo plazo habrá desabastecimiento,Coordinación con otros niveles de gobierno
+LA PAZ,El Alto,Wilfredo Blanco,Empleada(o) sector privado,Ferias,Normal,Han subido mucho los precios,Algunos productos ya no están disponibles,No habrá desabastecimiento,Nada
+LA PAZ,El Alto,Federico Chipana,Empleada(o) sector privado,NA,Normal,Han subido mucho los precios,Restricción vehicular,A largo plazo habrá desabastecimiento,Coordinacion con productores locales
+LA PAZ,El Alto,Wilson Siñani,Otros,NA,NA,NA,NA,NA,NA
+LA PAZ,El Alto,Santos Merlo,Servidor/Autoridad Pública,Ferias,Normal,Perjudicados estan en la zona periurbana o comunidades alejadas,Restricción vehicular,A largo plazo habrá desabastecimiento,Nada
+LA PAZ,El Alto,Santos,Empleada(o) sector privado,NA,NA,NA,NA,NA,NA
+LA PAZ,El Alto,Inés Mamani,Servidor/Autoridad Pública,Mercado de otro Municipio,Cada vez menos,Algunos productos ya no están disponibles,Restricción vehicular,No habrá desabastecimiento,No sabe
+LA PAZ,El Alto,Juana Laura,Profesional independiente,Producción propia,Cada vez menos,Han subido mucho los precios,NA,NA,Nada
+CBBA,Tiquipaya,Rosse Mary Saavedra,Servidor/Autoridad Pública,Mercado Municipal,Normal,Perjudicados estan en la zona periurbana o comunidades alejadas,Restricción vehicular,No habrá desabastecimiento,Nada
+CBBA,Tiquipaya,Guadalupe Sermenio,Profesional independiente,Mercado Municipal,Normal,Perjudicados estan en la zona periurbana o comunidades alejadas,Restricción vehicular,No habrá desabastecimiento,Nada
+CBBA,Quillacollo,Lenny García,Servidor/Autoridad Pública,Mercado Municipal,Cada vez menos,Han subido mucho los precios,Restricción vehicular,No habrá desabastecimiento,Nada
+CBBA,Villa Tunari,Hugo Montero Calvo,Profesional independiente,Mercado Municipal,Normal,Algunos productos ya no están disponibles,Restricción vehicular,No habrá desabastecimiento,Control de precios en mercados
+SANTA CRUZ,Santa Cruz de la Sierra,Erlan Villaroel,Empleada(o) sector privado,Ferias,Normal,Perjudicados estan en la zona periurbana o comunidades alejadas,NA,No habrá desabastecimiento,Coordinación con actores locales
+SANTA CRUZ,Cotoca,NA,Otros,NA,NA,NA,NA,NA,NA
+SANTA CRUZ,Urubichá,Ana María Tobar,Servidor/Autoridad Pública,Tiendas de barrio,Normal,Restricción vehicular,El horario de abastecimiento es limitado,A corto plazo habrá desabastecimiento,Nada
+POTOSI,Betanzos,Nadia Vargas,Servidor/Autoridad Pública,Mercado Municipal,Normal,Restricción vehicular,NA,No habrá desabastecimiento,Coordinación con actores locales
+POTOSI,Betanzos,Diego Ari,Productor,NA,NA,NA,NA,NA,NA
+POTOSI,Potosí,Edwin Voya,Servidor/Autoridad Pública,Mercado Barrial,Normal,Restricción vehicular,Perjudicados estan en la zona periurbana o comunidades alejadas,No habrá desabastecimiento,Coordinación con actores locales
+POTOSI,Potosí,Dimelza Singuri,Servidor/Autoridad Pública,Mercado Municipal,Normal,No hay donde comprar alimentos en mi barrio,Han subido mucho los precios,No habrá desabastecimiento,Control de precios en mercados
+POTOSI,Chaquí,Jhony García,Servidor/Autoridad Pública,Mercado de otro Municipio,Normal,No hay donde comprar alimentos en mi barrio,Restricción vehicular,No habrá desabastecimiento,No sabe
+POTOSI,Tupiza,Claudia Cari,Servidor/Autoridad Pública,Mercado Municipal,Normal,Ninguna,NA,No habrá desabastecimiento,Nada
+POTOSI,Urmiri,Nestor Susaño,Servidor/Autoridad Pública,Ferias,Normal,Algunos productos ya no están disponibles,Restricción vehicular,A corto plazo habrá desabastecimiento,Nada
+CHUQUISACA,Sucre,Marcelo Cortéz,Servidor/Autoridad Pública,Mercado Municipal,Cada vez menos,Han subido mucho los precios,Restricción vehicular,A largo plazo habrá desabastecimiento,Coordinación con actores locales
+CHUQUISACA,Sucre,Medardo Miranda,Profesional independiente,Producción propia,Normal,Restricción vehicular,NA,No habrá desabastecimiento,Coordinación con actores locales
+CHUQUISACA,Yamparáez,Pablo Ramos,Servidor/Autoridad Pública,Mercado de otro Municipio,Nunca fue normal,Restricción vehicular,NA,A corto plazo habrá desabastecimiento,Coordinación con actores locales
+CHUQUISACA,Tarabuco,Juan Ramón Márquez,Servidor/Autoridad Pública,Mercado Municipal,Normal,Restricción vehicular,NA,A corto plazo habrá desabastecimiento,Coordinación con actores locales
+CHUQUISACA,Presto,Maria Isabel Cruz,Servidor/Autoridad Pública,Ferias,Normal,Ninguna,NA,No habrá desabastecimiento,Coordinación con actores locales
+BENI,Guayaramerín,Yelena Leige,Empleada(o) del hogar,Mercado Municipal,Normal,Han subido mucho los precios,NA,A corto plazo habrá desabastecimiento,Control de precios en mercados
+BENI,Guayaramerín,Nedy Zeballos,Empleada(o) del hogar,Mercado de otro Municipio,Hay escacez,No hay donde comprar alimentos en mi barrio,Restricción vehicular,A corto plazo habrá desabastecimiento,Nada
+BENI,Trinidad,Yordi Vejarano,Profesional independiente,Tiendas de barrio,Normal,Han subido mucho los precios,NA,A corto plazo habrá desabastecimiento,Coordinación con actores locales
+BENI,Rurrenabaque,Eulogia Beltrán,Profesional independiente,Mercado Barrial,Normal,Restricción vehicular,Algunos productos ya no están disponibles,A corto plazo habrá desabastecimiento,Ayuda con transporte
+BENI,Rurrenabaque,Claudina Kreidstein Pardo,Servidor/Autoridad Pública,Tiendas de barrio,Normal,Restricción vehicular,No hay donde comprar alimentos en mi barrio,A corto plazo habrá desabastecimiento,Nada
+PANDO,Cobija,Roy Tirina,Profesional independiente,Mercado Municipal,Cada vez menos,Han subido mucho los precios,NA,A largo plazo habrá desabastecimiento,Coordinación con actores locales
+TARIJA,Tarija,Mauricio Vaca,Profesional independiente,Mercado Barrial,Normal,Restricción vehicular,No hay donde comprar alimentos en mi barrio,A largo plazo habrá desabastecimiento,Nada
+TARIJA,Tarija,Lily Duran,Empleada(o) del hogar,Mercado Municipal,Cada vez menos,Algunos productos ya no están disponibles,Restricción vehicular,A largo plazo habrá desabastecimiento,Nada
+TARIJA,Villamontes,Victoria Valdéz,Empleada(o) del hogar,Mercado Barrial,Normal,Restricción vehicular,Han subido mucho los precios,A largo plazo habrá desabastecimiento,Nada
+TARIJA,Bermejo,Hector Quispe,Profesional independiente,Mercado Municipal,Normal,Restricción vehicular,No hay donde comprar alimentos en mi barrio,A corto plazo habrá desabastecimiento,Coordinación con actores locales
+ORURO,Oruro,Miriam Tapia,Servidor/Autoridad Pública,Mercado Municipal,Cada vez menos,Perjudicados estan en la zona periurbana o comunidades alejadas,Han subido mucho los precios,No habrá desabastecimiento,Coordinación con actores locales
+ORURO,Oruro,LIzeth Garcia,Servidor/Autoridad Pública,Mercado Municipal,Cada vez menos,Perjudicados estan en la zona periurbana o comunidades alejadas,Han subido mucho los precios,No habrá desabastecimiento,Coordinación con actores locales
+ORURO,Challapata,Omar Mamani,Otros,Ferias,Normal,Algunos productos ya no están disponibles,NA,A largo plazo habrá desabastecimiento,Coordinación con otros niveles de gobierno
+ORURO,Salinas de Garci Mendoza,Omar Mamani,Profesional independiente,Ferias,Cada vez menos,Algunos productos ya no están disponibles,Restricción vehicular,No habrá desabastecimiento,Nada
