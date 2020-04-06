@@ -1,0 +1,169 @@
+---
+title: "Encuestas electorales"
+output: 
+  flexdashboard::flex_dashboard:
+    theme: readable
+    orientation: rows
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(self.contained = T)
+#source("procesamiento_graficos.R")
+library(readr)
+```
+
+
+Resultados encuestas {data-icon="fa-chart-bar"}
+=====================================  
+
+Row {.tabset .tabset-fade}
+-------------------------------------
+### Voto válido: Resultados ponderados
+<iframe frameBorder="0" src="img/tendencia_validos.html" width="100%" height="100%" allowtransparency="true"></iframe>
+
+### Voto válido y no válido: Resultados ponderados
+<iframe frameBorder="0" src="img/g1.html" width="100%" height="100%" allowtransparency="true"></iframe>
+
+### Voto válido: Resultados sin ponderadar
+<iframe frameBorder="0" src="img/scatter_validos.html" width="100%" height="100%" allowtransparency="true"></iframe>
+
+### Voto válido y no válido: Resultados sin ponderar
+<iframe frameBorder="0" src="img/scatter.html" width="100%" height="100%" allowtransparency="true"></iframe>
+
+
+### Metodología 
+
+<b><h3>Sobre resultados **sin** ponderaciones</h3></b>
+
+Debido a que las encuestadoras han preguntado a votantes acerca de su intención de voto por 16 candidatos distintos (durante el periodo analizado), incluir líneas individuales para cada uno de ellos genera más ruido que claridad en la representación gráfica de tendencias, por lo cual las visualizaciones incluyen únicamente datos para las tres postulaciones con mayor intención de voto. Si gusta consultar la base de datos con los resultados disgregados, incluyendo al resto de los candidatos, puede hacerlo en el siguiente enlace.
+
+Existen muchos datos relevantes al monitoreo de lo que denominamos el “voto no declarado”. Dependiendo de la encuestadora, incluyen categorías tales como “”No sabe/No responde”, “Blanco”, “Ninguno”, “Nulo”, “No contesta”, “Indecisos”, “Voto secreto”, “Blanco/Nulo” y “Ninguno/Blanco/Nulo”. Para simplificar el análisis, se han consolidado estas categorías bajo un solo rótulo de “voto no declarado”. No todas las encuestas publicadas incluyen este dato, pues algunas se limitan a reportar únicamente las intenciones de voto.
+
+Algunas encuestas no reportan datos sobre el “voto no declarado”. En este caso se dejó en blanco la información para mostrar la ausencia.<br>
+<br>
+<br>
+
+
+<h3><b>Sobre resultados **con** ponderaciones</h3></b>
+
+Considerando que algunos meses incluyen la publicación de varias encuestas, la presente visualización realiza una síntesis numérica en base a promedios para las encuestas realizadas. Se toman dos criterios para generar promedios ponderados. En primer lugar, la cobertura de la muestra pretende asignar mayor peso a aquellas encuestas cuyo marco muestral cubre una mayor proporción del país (ej. capitales + ciudades intermedias + área rural > eje troncal). Este criterio representa 60% de la ponderación. Para el 40% restante, se toman los tamaños de las muestras de cada encuesta, con el fin de asignarle un mayor peso a las que tienen un número elevado de casos (2400 observaciones > 800).
+
+Para el mes de junio 2019 (durante el cual no se publicaron encuestas, en buena parte debido a restricciones por parte del Tribunal Supremo Electoral [TSE]), se incluye una estimación que toma como promedio los datos del mes anterior y el mes siguiente. 
+
+En 3 casos (uno de PyP, y dos de Captura Consulting), se utilizó un estimado de votos por otros candidatos (dado que los mismos no fueron publicados), para estimar el voto válido, de acuerdo a cada encuesta.
+
+Base de datos {data-icon="fa-database"}
+=====================================  
+Row {.tabset .tabset-fade}
+-------------------------------------
+### Base de datos
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center><h2>Acceda a la base de datos haciendo click en el ícono</h2></center><br>
+<br>
+<br>
+<center><a href="https://docs.google.com/spreadsheets/d/1fM3Ftlzm8TfpWsA3SQVaw_vP2zQ8CKPLjkxYx1Zj77A/edit?ts=5d5c0907#gid=2041545477"><i class="fa fa-database fa-4x"></i></a></center>
+
+### Fuentes de encuestas
+<iframe frameBorder="0" src="img/tabla.html" width="100%" height="100%" allowtransparency="true"></iframe>
+
+Padrón electoral {data-icon="fa-address-card"}
+=====================================  
+
+<center><iframe frameBorder="0" src="img/bolivia_ext_padron.html" width="50%" height="500" allowtransparency="true"></iframe></center>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<center><iframe frameBorder="0" src="img/padron_dpto.html" width="50%" height="500" allowtransparency="true"></iframe></center>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<center><iframe frameBorder="0" src="img/mapa_municipios.html" width="80%" height="700" allowtransparency="true"></iframe></center>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<center><iframe frameBorder="0" src="img/paises_barras.html" width="50%" height="1000" allowtransparency="true"></iframe></center>
+
+Programas de gobierno {data-icon="fa-book-open"}
+=====================================  
+Row {.tabset .tabset-fade}
+-------------------------------------
+### Programas de gobierno
+
+<center>**Haga click en el logo de cada partido para acceder al programa de gobierno**</center>
+
+<br>
+<br>
+<center><a href="https://www.oep.org.bo/wp-content/uploads/2019/07/PROGRAMA_CC_EG_2019.pdf"><img src="img/logo_cc.jpg" width="180" height="86" ></a></center>               
+
+<br>
+
+<center><a href="https://www.oep.org.bo/wp-content/uploads/2019/07/PROGRAMA_FPV_EG_2019.pdf"><img src="img/logo_fpv.png" width="86" height="86" ></a></center>               
+<br>
+
+<center><a href="https://www.oep.org.bo/wp-content/uploads/2019/07/PROGRAMA_MTS_EG_2019.pdf"><img src="img/logo_tercer.jpg" width="86" height="86" ></a></center>           
+
+<br>
+
+<center><a href="https://www.oep.org.bo/wp-content/uploads/2019/07/PROGRAMA_UCS_EG_2019.pdf"><img src="img/logo_ucs.jpg" width="86" height="130" ></a></center>         
+
+<br>
+
+<center><a href="https://www.oep.org.bo/wp-content/uploads/2019/07/PROGRAMA_MAS_IPSP_EG_2019.pdf"><img src="img/logo_mas.png" width="100" height="86" ></a></center>
+
+<br>
+
+<center><a href="https://www.oep.org.bo/wp-content/uploads/2019/07/PROGRAMA_BOLIVIA_DICE_NO_EG_2019.pdf"><img src="img/logo_bdn.jpg" width="86" height="86" ></a></center>
+
+<br>
+
+<center><a href="https://www.oep.org.bo/wp-content/uploads/2019/07/PROGRAMA_PDC_EG_2019.pdf"><img src="img/logo_pdc.png" width="86" height="86" ></a></center>
+
+<br>
+
+<center><a href="https://www.oep.org.bo/wp-content/uploads/2019/07/PROGRAMA_MNR_EG_2019.pdf"><img src="img/logo_mnr.jpg" width="130" height="86" ></a></center>
+
+<br>
+
+<center><a href="https://www.oep.org.bo/wp-content/uploads/2019/07/PROGRAMA_PAN_BOL_EG_2019.pdf"><img src="img/logo_panbol.jpg" width="86" height="86" ></a></center>
+
+
+
+
+
+
+### Comparación de los programas en la prensa
+<iframe frameBorder="0" src="img/planes_periodicos.html" width="100%" height="100%" allowtransparency="true"></iframe>
+
+
+### Comparación de los programas por cuatro instituciones
+<iframe frameBorder="0" src="img/planes_instituciones.html" width="100%" height="100%" allowtransparency="true"></iframe>
+
+Sobre el proyecto {data-icon="fa-sticky-note"}
+=====================================  
+Esta iniciativa busca recopilar información relevante para el proceso electoral en Bolivia, de cara a las elecciones generales del 20 de octubre de 2019. En su primera fase, el proyecto reúne cifras de todas las encuestas electorales publicadas en Bolivia desde noviembre de 2016 hasta la fecha, difundidos en más de 10 medios, y producidos por 7 encuestadoras. En base a la visualización y sistematización de más de 46 encuestas publicadas, el objetivo consiste en ofrecer insumos para analizar estos resultados en su conjunto.<br>
+<br>
+
+Los datos publicados pueden ser usados por terceros siempre y cuando se cite la fuente [www.boliviaelectoral.com](www.boliviaelectoral.com)<br>
+<br>
+
+El proyecto se realiza con apoyo de la [Fundación Friedrich Ebert (FES)](https://www.fes-bolivia.org/). Para mayor información comunicarse con info@fes-bolivia.org<br><br>
+<br>
+<br>
+<img src="img/cc.png"  height="40" width="100">

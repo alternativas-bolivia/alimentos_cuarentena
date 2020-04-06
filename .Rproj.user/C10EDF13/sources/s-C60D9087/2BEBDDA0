@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1586164278703.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "2BEBDDA0",
+    "lastKnownWriteTime" : 1585749663,
+    "last_content_update" : 1585749663,
+    "path" : "~/Documents/consultorias/alimentos_cuarentena/code/main_code.R",
+    "project_path" : "code/main_code.R",
+    "properties" : {
+        "cursorPosition" : "235,34",
+        "scrollLine" : "220"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 11,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1586160588899.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1889247328",
+    "id" : "9FE161C8",
+    "lastKnownWriteTime" : 1586172342,
+    "last_content_update" : 1586173095433,
+    "path" : "~/Documents/consultorias/alimentos_cuarentena/code/graficos_2da_semana.R",
+    "project_path" : "code/graficos_2da_semana.R",
+    "properties" : {
+        "cursorPosition" : "93,19",
+        "scrollLine" : "76",
+        "tempName" : "Untitled3"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

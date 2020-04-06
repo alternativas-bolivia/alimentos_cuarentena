@@ -1,0 +1,188 @@
+# sobre: treemaps en highcharter sobre voto en el exterior
+
+library(highcharter)
+library(tidyverse)
+library(hrbrthemes)
+
+ext <- read_csv("/Users/rafalopezv/Dropbox/alfa1/bases_procesadas/agregado_exterior_voto/2016.referendo.constitucional.exterior.csv")
+nac <- read_csv("/Users/rafalopezv/Dropbox/alfa1/bases_procesadas/agregado_departamental_voto/2016.referendo.constitucional.csv")
+
+# a nivel de países
+a <- ext %>%
+  group_by(pais) %>% 
+  summarise(
+    inscritos = sum(inscritos_habilitados),
+    emitidos = sum(emitidos),
+    ciudades = length(unique(ciudad)),
+    si = sum(si)/sum(validos) * 100
+  ) %>% 
+  mutate(
+    prop_inscritos = prop.table(inscritos) * 100,
+    prop_emitidos = prop.table(emitidos) * 100,
+    emitidos_todo = 81081 + 5409838,
+    inscritos_todo = 258990 + 6243079,
+    prop_inscritos_total = inscritos / inscritos_todo * 100,
+    prop_emitidos_total = emitidos / emitidos_todo * 100
+  ) %>% 
+  arrange(desc(emitidos)) %>% 
+  hchart("treemap", hcaes(x = "pais", value = "emitidos", color = "emitidos")) %>% 
+  hc_tooltip(enabled = T, valueDecimals = 0, borderWidth = 0.01,
+             pointFormat=paste("<br>Inscritos para votar: <b>{point.inscritos}</b><br>
+                               Votos emitidos: <b>{point.emitidos}</b><br>
+                               Número de ciudades: <b>{point.ciudades}</b><br>
+                               Peso de los inscritos respecto a todo el padrón: <b>{point.prop_inscritos_total:.1f} %</b><br>
+                               Peso de los emitidos respecto a todos los votos emitidos: <b>{point.prop_emitidos_total:.1f} %</b><br>
+                               Porcentaje de inscritos del total de inscritos en el exterior: <b>{point.prop_inscritos:.1f} %</b><br>
+                               Porcentaje de votos emitidos del total de votos en el exterior: <b>{point.prop_emitidos:.1f} %</b><br>
+                               Apoyo a la reelección de Evo Morales, referendo 21F: <b>{point.si:.1f} %</b><br>"),
+             
+             headerFormat = "") %>% 
+  hc_colorAxis(stops = color_stops(colors = viridisLite::cividis(10, direction = -1))) %>% 
+  hc_title(text = "¿Cuánto representa el voto emitido de los países respecto a todo el padrón?",
+           style = list(useHTML = TRUE, fontSize = "18")) %>%
+  hc_subtitle(text = "En base a los votos emitidos del referendo constitucional de 2016",
+              style = list(useHTML = TRUE, fontSize = "15")) %>% 
+  hc_credits(
+    enabled = TRUE,
+    text = "datosCC"
+  )
+htmlwidgets::saveWidget(a, "/Users/rafalopezv/Dropbox/alfa1/img/peso_paises_exterior.html")
+
+# a nivel de ciudades
+a <- ext %>%
+  group_by(pais, ciudad) %>% 
+  summarise(
+    inscritos = sum(inscritos_habilitados),
+    emitidos = sum(emitidos),
+    si = sum(si)/sum(validos) * 100
+  ) %>% 
+  mutate(
+    prop_inscritos = prop.table(inscritos) * 100,
+    prop_emitidos = prop.table(emitidos) * 100,
+    emitidos_todo = 81081 + 5409838,
+    inscritos_todo = 258990 + 6243079,
+    prop_inscritos_total = inscritos / inscritos_todo * 100,
+    prop_emitidos_total = emitidos / emitidos_todo * 100
+  ) %>% 
+  arrange(desc(emitidos)) %>% 
+  hchart("treemap", hcaes(x = "ciudad", value = "emitidos", color = "emitidos")) %>% 
+  hc_tooltip(enabled = T, valueDecimals = 0, borderWidth = 0.01,
+             pointFormat=paste("<br>País: <b>{point.pais}</b><br>
+                               <br>Inscritos para votar: <b>{point.inscritos}</b><br>
+                               Votos emitidos: <b>{point.emitidos}</b><br>
+                               Peso de los inscritos respecto a todo el padrón: <b>{point.prop_inscritos_total:.3f} %</b><br>
+                               Peso de los emitidos respecto a todos los votos emitidos: <b>{point.prop_emitidos_total:.3f} %</b><br>
+                               Porcentaje de inscritos del total de inscritos en el exterior: <b>{point.prop_inscritos:.3f} %</b><br>
+                               Porcentaje de votos emitidos del total de votos en el exterior: <b>{point.prop_emitidos:.3f} %</b><br>
+                               Apoyo a la reelección de Evo Morales, referendo 21F: <b>{point.si:.3f} %</b><br>"),
+             
+             headerFormat = "") %>% 
+  hc_colorAxis(stops = color_stops(colors = viridisLite::cividis(71, direction = -1))) %>% 
+  hc_title(text = "¿Cuánto representa el voto emitido de las ciudades en el exterior respecto a todo el padrón?",
+           style = list(useHTML = TRUE, fontSize = "18")) %>%
+  hc_subtitle(text = "En base a los votos emitidos del referendo constitucional de 2016",
+              style = list(useHTML = TRUE, fontSize = "15")) %>% 
+  hc_credits(
+    enabled = TRUE,
+    text = "datosCC"
+  )
+
+htmlwidgets::saveWidget(a, "/Users/rafalopezv/Dropbox/alfa1/img/peso_ciudades_exterior.html")
+
+# estaticos
+# a nivel de países
+ext %>%
+  group_by(pais) %>% 
+  summarise(
+    inscritos = sum(inscritos_habilitados),
+    emitidos = sum(emitidos),
+    ciudades = length(unique(ciudad)),
+    si = sum(si)/sum(validos) * 100
+  ) %>% 
+  mutate(
+    prop_inscritos = prop.table(inscritos),
+    prop_emitidos = prop.table(emitidos),
+    emitidos_todo = 81081 + 5409838,
+    inscritos_todo = 258990 + 6243079,
+    prop_inscritos_total = inscritos / inscritos_todo,
+    prop_emitidos_total = emitidos / emitidos_todo
+  ) %>% 
+  arrange(desc(prop_inscritos_total)) %>% 
+  mutate(
+    no = 1:nrow(.)
+  ) %>% 
+  ggplot(aes(fct_reorder(pais, no, .desc = T), scales::percent(prop_inscritos_total))) + 
+  geom_col() + 
+  coord_flip() +
+  theme_ipsum_rc() + 
+  labs(
+    title = "¿Cuánto representa el voto emitido de los países respecto a todo el padrón?",
+    subtitle = "En base a los votos emitidos del referendo constitucional de 2016",
+    x = "",
+    y = ""
+  ) +
+  geom_text(aes(label = scales::percent(prop_inscritos_total)), hjust = 1, color = "white") + 
+  ggsave("img/peso_extranjero_pais.jpg", width = 12, height = 13)
+  
+# a nivel de ciudades
+ext %>%
+  group_by(ciudad) %>% 
+  summarise(
+    inscritos = sum(inscritos_habilitados),
+    emitidos = sum(emitidos),
+    ciudades = length(unique(ciudad)),
+    si = sum(si)/sum(validos) * 100
+  ) %>% 
+  mutate(
+    prop_inscritos = prop.table(inscritos),
+    prop_emitidos = prop.table(emitidos),
+    emitidos_todo = 81081 + 5409838,
+    inscritos_todo = 258990 + 6243079,
+    prop_inscritos_total = inscritos / inscritos_todo,
+    prop_emitidos_total = emitidos / emitidos_todo
+  ) %>% 
+  arrange(desc(prop_inscritos_total)) %>% 
+  mutate(
+    no = 1:nrow(.)
+  ) %>% 
+  ggplot(aes(fct_reorder(ciudad, no, .desc = T), scales::percent(prop_inscritos_total))) + 
+  geom_col() + 
+  coord_flip() +
+  theme_ipsum_rc() + 
+  labs(
+    title = "¿Cuánto representa el voto emitido de las ciudades del exterior respecto a todo el padrón?",
+    subtitle = "En base a los votos emitidos del referendo constitucional de 2016",
+    x = "",
+    y = ""
+  ) +
+  geom_text(aes(label = scales::percent(prop_inscritos_total)), hjust = 1, color = "white") + 
+  ggsave("img/peso_extranjero_ciudad.jpg", width = 12, height = 16)
+
+
+# peso inscritos por país
+# a nivel de países
+ext %>%
+  group_by(pais) %>% 
+  summarise(
+    inscritos = sum(inscritos_habilitados)
+  ) %>% 
+  arrange(desc(inscritos)) %>% 
+  mutate(
+    no = 1:nrow(.)
+  ) %>% 
+  ggplot(aes(fct_reorder(pais, no, .desc = T), inscritos)) + 
+  geom_col(fill = "red", alpha = 0.7) + 
+  coord_flip() +
+  theme_ipsum_rc() + 
+  labs(
+    title = "Inscritos habilitados por país",
+    subtitle = "En base a los votos emitidos del referendo constitucional de 2016",
+    x = "",
+    y = ""
+  ) +
+  geom_text(aes(label = inscritos), hjust = 1, color = "black", size = 5) 
+  ggsave("img/peso_extranjero_pais.jpg", width = 12, height = 13)
+
+
+  
+  

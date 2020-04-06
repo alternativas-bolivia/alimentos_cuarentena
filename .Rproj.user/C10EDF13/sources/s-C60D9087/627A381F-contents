@@ -1,0 +1,71 @@
+df %>% 
+  select(matches("en_que_municipio_")) -> temp
+  
+temp %<>% 
+  apply(., 2, is.na) %>% 
+  as.data.frame() 
+
+temp$suma <- rowSums(temp) 
+temp$num <- 1:nrow(temp_1)
+
+temp %>% 
+  filter(suma == 9) %>% 
+  pull(num) -> temp
+
+df %>% 
+  select(matches("departamento|en_que_municipio_")) %>% 
+  mutate(num = 1:nrow(.)) %>% 
+  gather(sigla, valor, -en_que_departamento_reside_actualmente, -num) %>% 
+  arrange(num) %>% 
+  filter(!is.na(valor)) %>% 
+  select(num, municipio = valor) %>% 
+  bind_rows(., tibble(
+    num = temp, 
+    municipio = rep(NA, length(temp))
+  )) %>% 
+  arrange(num) %>% 
+  pull(municipio) -> temp_1
+  
+df %<>% select(-contains("en_que_municipio_"))
+
+# añdir la columna de municipio
+df$municipio <- temp_1
+
+# ---------------------------------
+# división por respuestas
+# ---------------------------------
+donde <- df %>% 
+  group_by(CODIGO, municipio, segmento) %>% 
+  count() %>% 
+  filter(!is.na(segmento)) 
+  
+ocupacion <- df %>% 
+  group_by(cual_es_su_ocupacion_actual, segmento) %>% 
+  count()
+
+abastece <- df %>% 
+  group_by(cual_es_su_ocupacion_actual, segmento) %>% 
+  count()
+  
+
+
+
+  
+
+df %>% 
+  mutate(
+    numero = 1:nrow(.)
+  ) %>% 
+  select(matches("departamento|en_que_municipio_"), numero) %>% 
+  filter(numero %in% temp_2) %>% 
+  view
+
+
+
+
+
+mutate(num = 1:nrow(.)) %>% 
+  gather(sigla, valor, -en_que_departamento_reside_actualmente, -num) %>% 
+  arrange(num) %>% 
+  unique()
+  
