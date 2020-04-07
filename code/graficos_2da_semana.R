@@ -23,8 +23,11 @@ highchart(type = "map") %>%
   hc_add_series(name = "Sin cobertura de encuesta", data = donde %>% filter(segmento == "Sin cobertura de encuesta"), 
                 color = colores[4], borderColor = "transparent") %>%
   hc_title(text = "67 municipios son parte de la segunda encuesta",
-              align =  "center", style=list(fontFamily = "Roboto Condensed",
+              align =  "left", style=list(fontFamily = "Roboto Condensed",
                                             fontSize = 19)) %>% 
+  hc_subtitle(text = "Mapa interactivo: vea el nombre de los municipio con el mouse y active/desactive las categorías",
+           align =  "left", style=list(fontFamily = "Roboto Condensed",
+                                       fontSize = 17)) %>% 
   hc_tooltip(enabled = T, valueDecimals = 0, borderWidth = 0.01,
              pointFormat = paste("<br>Municipio: <b>{point.municipio}</b><br>
                                Encuestados: <b>{point.value} </b>"),
@@ -46,7 +49,7 @@ ocupacion %>%
   map(., ~mutate_if(., is.numeric, round, 0)) -> ocupacion
 
 
-ocupacion[[1]] %>% 
+ocupacion[[1]] 
   ggplot(aes(label = cual_es_su_ocupacion_actual, values = prop)) +
   geom_pictogram(n_rows = 10, aes(colour = cual_es_su_ocupacion_actual), flip = TRUE, make_proportional = T) +
   scale_color_manual(
@@ -66,7 +69,7 @@ ocupacion[[1]] %>%
   theme(legend.text = element_text(size = 10, hjust = 0, vjust = 0.75)) +
   ggsave("img/semana_2/ocupacion_capitales.jpg", width = 8, height = 8)
   
-ocupacion[[3]] %>%
+ocupacion[[3]] %>% 
   mutate(prop = case_when(
     cual_es_su_ocupacion_actual == "Servidor/Autoridad Pública" ~ 1,
     T ~ prop
@@ -142,12 +145,15 @@ hctreemap2(data = abastece,
              style = list(fontFamily = "Roboto Condensed", fontSize = 14)) %>% 
   hc_chart(backgroundColor="#FFFFFF", borderColor = "transparent", 
            style=list(fontFamily = "Roboto Condensed", fontSize = 12)) %>% 
-  hc_legend(enabled = FALSE)   %>% 
+  hc_legend(enabled = T)   %>% 
   hc_colors("transparent") %>% 
   hc_title(text = "¿Cuál es su fuente de abastecimiento?",
-           align =  "center", style=list(fontFamily = "Roboto Condensed",
+           align =  "left", style=list(fontFamily = "Roboto Condensed",
                                          fontSize = 19)) %>% 
-  hc_subtitle(text = "Ponderado al 100% por cada segmento territorial en base al número de respuestas",
+  hc_subtitle(text = "Ponderado al 100% por cada segmento territorial en base al número de respuestas<br><br>Visualización interactiva: Presione sobre el cuadro",
+              align =  "left", style=list(fontFamily = "Roboto Condensed",
+                                            fontSize = 17)) %>% 
+  hc_credits(text = "Los colores y el tamaño de los rectángulos indican la concentración de casos para cada categoría", enabled = TRUE,
               align =  "center", style=list(fontFamily = "Roboto Condensed",
                                             fontSize = 17)) %>% 
   htmlwidgets::saveWidget(here::here("img/semana_2/", "abastecimiento.html"))
@@ -304,14 +310,17 @@ hctreemap2(data = dificultades,
              style = list(fontFamily = "Roboto Condensed", fontSize = 14)) %>% 
   hc_chart(backgroundColor="#FFFFFF", borderColor = "transparent", 
            style=list(fontFamily = "Roboto Condensed", fontSize = 12)) %>% 
-  hc_legend(enabled = FALSE)   %>% 
+  hc_legend(enabled = T)   %>% 
   hc_colors("transparent") %>% 
   hc_title(text = "¿Dificultades para abastecerse?",
-           align =  "center", style=list(fontFamily = "Roboto Condensed",
+           align =  "left", style=list(fontFamily = "Roboto Condensed",
                                          fontSize = 19)) %>% 
-  hc_subtitle(text = "Ponderado al 100% por cada segmento territorial en base al número de respuestas",
-              align =  "center", style=list(fontFamily = "Roboto Condensed",
+  hc_subtitle(text = "Ponderado al 100% por cada segmento territorial en base al número de respuestas<br><br>Visualización interactiva: Presione sobre el cuadro",
+              align =  "left", style=list(fontFamily = "Roboto Condensed",
                                             fontSize = 17)) %>% 
+  hc_credits(text = "Los colores y el tamaño de los rectángulos indican la concentración de casos para cada categoría", enabled = TRUE,
+             align =  "center", style=list(fontFamily = "Roboto Condensed",
+                                           fontSize = 17)) %>% 
   htmlwidgets::saveWidget(here::here("img/semana_2/", "dificultades.html"))
 
 # abastecimiento hast el 15 de abril
@@ -392,6 +401,135 @@ gam %>%
   ) +
   ggsave("img/semana_2/gam.jpg", width = 20, height = 8) 
   
+
+# abastecimiento treemaps
+library(treemapify)
+
+abastece %>% 
+  filter(segmento == "Municipios capitales y El Alto") %>% 
+  group_by(abastece) %>% 
+  summarise(prop = sum(prop)) %>% 
+  mutate(prop = prop.table(prop) * 100) %>% 
+  mutate_if(is.numeric, round, 2) %>% 
+  mutate(label = paste0(abastece, ": ", prop, " %")) %>% 
+  ggplot(aes(area = prop, label = label, fill = prop)) +
+  geom_treemap(color = "white", start = "topleft") +
+  geom_treemap_text(min.size = 1, place = "center", family = "Roboto Condensed", color = "white", start = "topleft") +
+  #scale_fill_gradientn(colors = c("blue","green3")) +
+  theme(legend.position = "NA") +
+  theme(text = element_text(family = "Roboto Condensed")) +
+  labs(
+    title = "¿Cuál es su fuente de abastecimiento?",
+    subtitle = "Ciudades capitales y El Alto",
+    caption = "Ponderado al 100%"
+  ) +
+  ggsave(here::here("img/semana_2/treemap_abastecimeinto_ciudades.jpg"), height = 8, width = 12)
+
+abastece %>% 
+  filter(segmento == "Ciudades intermedias") %>% 
+  group_by(abastece) %>% 
+  summarise(prop = sum(prop)) %>% 
+  mutate(prop = prop.table(prop) * 100) %>% 
+  mutate_if(is.numeric, round, 2) %>% 
+  mutate(label = paste0(abastece, ": ", prop, " %")) %>% 
+  ggplot(aes(area = prop, label = label, fill = prop)) +
+  geom_treemap(color = "white", start = "topleft") +
+  geom_treemap_text(min.size = 1, place = "center", family = "Roboto Condensed", color = "white", start = "topleft") +
+  #scale_fill_gradientn(colors = c("blue","green3")) +
+  theme(legend.position = "NA") +
+  theme(text = element_text(family = "Roboto Condensed")) +
+  labs(
+    title = "¿Cuál es su fuente de abastecimiento?",
+    subtitle = "Ciudades intermedias",
+    caption = "Ponderado al 100%"
+  ) +
+  ggsave(here::here("img/semana_2/treemap_abastecimeinto_ciudades_intermedias.jpg"), height = 8, width = 12)
+
+  
+abastece %>% 
+  filter(segmento == "Municipios rurales") %>% 
+  group_by(abastece) %>% 
+  summarise(prop = sum(prop)) %>% 
+  mutate(prop = prop.table(prop) * 100) %>% 
+  mutate_if(is.numeric, round, 2) %>% 
+  mutate(label = paste0(abastece, ": ", prop, " %")) %>% 
+  ggplot(aes(area = prop, label = label, fill = prop)) +
+  geom_treemap(color = "white", start = "topleft") +
+  geom_treemap_text(min.size = 1, place = "center", family = "Roboto Condensed", color = "white", start = "topleft") +
+  #scale_fill_gradientn(colors = c("blue","green3")) +
+  theme(legend.position = "NA") +
+  theme(text = element_text(family = "Roboto Condensed")) +
+  labs(
+    title = "¿Cuál es su fuente de abastecimiento?",
+    subtitle = "Municipios rurales",
+    caption = "Ponderado al 100%"
+  ) +
+  ggsave(here::here("img/semana_2/treemap_abastecimeinto_rural.jpg"), height = 8, width = 12)
+
+#------
+dificultades %>% 
+  ungroup() %>% 
+  filter(segmento == "Municipios rurales") %>% 
+  group_by(dificultades) %>% 
+  summarise(prop = sum(prop)) %>% 
+  mutate(prop = prop.table(prop) * 100) %>% 
+  mutate_if(is.numeric, round, 2) %>% 
+  mutate(label = paste0(dificultades, ": ", prop, " %")) %>% 
+  ggplot(aes(area = prop, label = label, fill = prop)) +
+  geom_treemap(color = "white", start = "topleft") +
+  geom_treemap_text(min.size = 1, place = "center", family = "Roboto Condensed", color = "white", start = "topleft") +
+  #scale_fill_gradientn(colors = c("blue","green3")) +
+  theme(legend.position = "NA") +
+  theme(text = element_text(family = "Roboto Condensed")) +
+  labs(
+    title = "¿Dificultades para abastecerse?",
+    subtitle = "Municipios rurales",
+    caption = "Ponderado al 100%"
+  ) +
+  ggsave(here::here("img/semana_2/treemap_dificultades_rural.jpg"), height = 8, width = 12)
+
+dificultades %>% 
+  ungroup() %>% 
+  filter(segmento == "Municipios capitales y El Alto") %>% 
+  group_by(dificultades) %>% 
+  summarise(prop = sum(prop)) %>% 
+  mutate(prop = prop.table(prop) * 100) %>% 
+  mutate_if(is.numeric, round, 2) %>% 
+  mutate(label = paste0(dificultades, ": ", prop, " %")) %>% 
+  ggplot(aes(area = prop, label = label, fill = prop)) +
+  geom_treemap(color = "white", start = "topleft") +
+  geom_treemap_text(min.size = 1, place = "center", family = "Roboto Condensed", color = "white", start = "topleft") +
+  #scale_fill_gradientn(colors = c("blue","green3")) +
+  theme(legend.position = "NA") +
+  theme(text = element_text(family = "Roboto Condensed")) +
+  labs(
+    title = "¿Dificultades para abastecerse?",
+    subtitle = "Municipios capitales y El Alto",
+    caption = "Ponderado al 100%"
+  ) +
+  ggsave(here::here("img/semana_2/treemap_dificultades_capitales.jpg"), height = 8, width = 12)
+
+  
+dificultades %>% 
+  ungroup() %>% 
+  filter(segmento == "Ciudades intermedias") %>% 
+  group_by(dificultades) %>% 
+  summarise(prop = sum(prop)) %>% 
+  mutate(prop = prop.table(prop) * 100) %>% 
+  mutate_if(is.numeric, round, 2) %>% 
+  mutate(label = paste0(dificultades, ": ", prop, " %")) %>% 
+  ggplot(aes(area = prop, label = label, fill = prop)) +
+  geom_treemap(color = "white", start = "topleft") +
+  geom_treemap_text(min.size = 1, place = "center", family = "Roboto Condensed", color = "white", start = "topleft") +
+  #scale_fill_gradientn(colors = c("blue","green3")) +
+  theme(legend.position = "NA") +
+  theme(text = element_text(family = "Roboto Condensed")) +
+  labs(
+    title = "¿Dificultades para abastecerse?",
+    subtitle = "Municipios capitales y El Alto",
+    caption = "Ponderado al 100%"
+  ) +
+  ggsave(here::here("img/semana_2/treemap_dificultades_intermedias.jpg"), height = 8, width = 12)
 
 
   
