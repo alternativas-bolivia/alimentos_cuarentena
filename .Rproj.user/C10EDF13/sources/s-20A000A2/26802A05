@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "945714346",
+    "hash" : "0",
     "id" : "26802A05",
-    "lastKnownWriteTime" : 1586788647,
-    "last_content_update" : 1586788647455,
+    "lastKnownWriteTime" : 1586790103,
+    "last_content_update" : 1586790103232,
     "path" : "~/Documents/consultorias/alimentos_cuarentena/index.Rmd",
     "project_path" : "index.Rmd",
     "properties" : {
-        "cursorPosition" : "118,9",
-        "scrollLine" : "101"
+        "cursorPosition" : "85,0",
+        "scrollLine" : "76"
     },
     "read_only" : false,
     "read_only_alternatives" : [

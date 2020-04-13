@@ -40,7 +40,7 @@ El levantamiento de datos se realiza mediante entrevistas telefónicas, personal
 Este trabajo está centrado en visualizar y canalizar las percepciones de la ciudadanía hacia tomadores de decisión y generar información para diseñar estrategias en torno al abastecimiento en el contexto de un estado de emergencia para el cual no estaba preparado el país. Ciertamente es de suma urgencia conocer las necesidades de la ciudadanía desde la experiencia cotidiana que se vive en diferentes regiones y territorios del país.
 
 
-Reporte actualizado: 6 de Abril
+Reporte actualizado: 13 de Abril
 =====================================  
 
 Row {.tabset .tabset-fade}
@@ -70,41 +70,19 @@ Row {.tabset .tabset-fade}
 ### Acciones de su gobierno local
 ![](img/semana_3/gam.jpg)
 
-Comparación en el tiempo
+Reportes pasados y comparados
 =====================================  
 
 Row {.tabset .tabset-fade}
 -------------------------------------
-
-### Encuestados
-![](img/comparacion/ocupacion.jpg)
-
-### Cobertura geográfica
-![](img/semana_3/donde_comparacion.png)
-
-### Fuentes de abastecimiento
-![](img/comparacion/abastecimiento.jpg)
-
-### Disponibilidad de alimentos
-![](img/comparacion/disponibilidad.jpg)
-
-### Dificultades para abastecerse
-![](img/comparacion/dificultades.jpg)
-
-### Escasez de productos
-![](img/comparacion/escasez.jpg)
-
-### Abastecimiento hasta final de cuarentena
-![](img/comparacion/abril_15.jpg)
-
-### Acciones de su gobierno local
-![](img/comparacion/gam.jpg)
-
-Reportes pasados
-=====================================  
+### Reportes pasados
 
 - [Reporte 1: 27 de Marzo](https://drive.google.com/open?id=18K6zQNgA8Ry8ZM8oL-tdLAprsnVeR-zU)
 - [Reporte 2: 6 de Abril](https://drive.google.com/open?id=10wUxKSZ6T0QrPepFwEedYin6oh211MVP)
+
+### Comparación en el tiempo
+<iframe frameBorder="0" src="comparador_1.html" width="100%" height="100%" allowtransparency="true"></iframe>
+
 
 Llena nuestra encuesta
 =====================================  
