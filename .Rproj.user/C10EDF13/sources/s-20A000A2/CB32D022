@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1586749076710.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "CB32D022",
+    "lastKnownWriteTime" : 1586220107,
+    "last_content_update" : 1586751797738,
+    "path" : "~/Documents/consultorias/alimentos_cuarentena/code/graficos_3ra_semana.R",
+    "project_path" : "code/graficos_3ra_semana.R",
+    "properties" : {
+        "cursorPosition" : "60,0",
+        "scrollLine" : "51"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
