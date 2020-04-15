@@ -48,6 +48,14 @@ ocupacion %>%
   map(., ~mutate(., prop = prop.table(n)*100)) %>% 
   map(., ~mutate_if(., is.numeric, round, 0)) -> ocupacion
 
+ocupacion %>% 
+  bind_rows() %>% 
+  mutate(
+    base = "ocupacion", 
+    semana = "Semana 1"
+  ) %>% 
+  write_csv("output/comparacion/ocupacion_s1.csv")
+
 
 ocupacion[[1]] 
   ggplot(aes(label = cual_es_su_ocupacion_actual, values = prop)) +
@@ -121,6 +129,13 @@ abastece %<>%
     segmento == "capitales" ~ "Municipios capitales y El Alto",
     segmento == "intermedias" ~ "Ciudades intermedias"
   ))
+
+abastece %>% 
+  mutate(
+    base = "abastece", 
+    semana = "Semana 1"
+  ) %>% 
+  write_csv("output/comparacion/abastece_s1.csv")
 
 hctreemap2(data = abastece,
            group_vars = c("segmento", "abastece"),
@@ -201,7 +216,39 @@ disponibilidad %>%
   ) +
   ggsave("img/semana_2/disponibilidad.jpg", width = 20, height = 8) 
 
+disponibilidad %>% 
+  mutate(segmento = case_when(
+    segmento == "rurales" ~ "Municipios rurales",
+    segmento == "capitales" ~ "Municipios capitales y El Alto",
+    segmento == "intermedias" ~ "Ciudades intermedias"
+  )) %>% 
+  mutate(
+    prop = case_when(
+      segmento == "Ciudades intermedias" & disponibilidad == "Nunca fue normal" ~ 3, 
+      T ~ prop
+    )
+  ) %>%
+  mutate(
+    prop = case_when(
+      segmento == "Municipios rurales" & disponibilidad == "Nunca fue normal" ~ 14, 
+      T ~ prop
+    ),
+    base = "disponibilidad", 
+    semana = "Semana 1", 
+  ) %>% 
+  write_csv("output/comparacion/disponibilidad_s1.csv")
+
+
+
 # escasez
+escasez_productos %>% 
+  mutate(
+    base = "escasez",
+    semana = "Semana 1"
+  ) %>% 
+  write_csv("output/comparacion/escasez_s1.csv")
+
+
 escasez_productos %>% 
   filter(segmento == "capitales") -> temp
 
@@ -285,6 +332,14 @@ dificultades %>%
     segmento == "capitales" ~ "Municipios capitales y El Alto",
     segmento == "intermedias" ~ "Ciudades intermedias"
   )) -> dificultades
+
+
+dificultades %>% 
+  mutate(
+    base = "dificultades",
+    semana = "Semana 1"
+  ) %>% 
+  write_csv("output/comparacion/dificultades_s1.csv")
   
   
 hctreemap2(data = dificultades,
@@ -364,6 +419,28 @@ abril_15 %>%
   ) +
   ggsave("img/semana_2/abril_15.jpg", width = 20, height = 8) 
 
+abril_15 %>% 
+  ungroup() %>% 
+  mutate(segmento = case_when(
+    segmento == "rurales" ~ "Municipios rurales",
+    segmento == "capitales" ~ "Municipios capitales y El Alto",
+    segmento == "intermedias" ~ "Ciudades intermedias"
+  )) %>% 
+  group_split(segmento) %>% 
+  map(., ~ mutate(., prop = prop.table(n)*100)) %>% 
+  map(., ~ mutate_if(., is.numeric, round, 0)) %>% 
+  bind_rows() %>% 
+  mutate(prop = case_when(
+    segmento == "Municipios capitales y El Alto" & abril_15 == "No habrá desabastecimiento" ~ 23,
+    T ~ prop
+  )) %>% 
+  mutate(
+    base = "abril_15",
+    semana = "Semana 1"
+  ) %>% 
+  write_csv("output/comparacion/abril_15_s1.csv")
+
+
 # gam
 gam %>% 
   ungroup() %>% 
@@ -401,6 +478,22 @@ gam %>%
   ) +
   ggsave("img/semana_2/gam.jpg", width = 20, height = 8) 
   
+gam %>% 
+  ungroup() %>% 
+  mutate(segmento = case_when(
+    segmento == "rurales" ~ "Municipios rurales",
+    segmento == "capitales" ~ "Municipios capitales y El Alto",
+    segmento == "intermedias" ~ "Ciudades intermedias"
+  )) %>% 
+  group_split(segmento) %>% 
+  map(., ~ mutate(., prop = prop.table(n)*100)) %>% 
+  map(., ~ mutate_if(., is.numeric, round, 0)) %>% 
+  bind_rows() %>% 
+  mutate(
+    base = "gam", 
+    semana = "Semana 1"
+  ) %>% 
+  write_csv("output/comparacion/gam_s1.csv")
 
 # abastecimiento treemaps
 library(treemapify)

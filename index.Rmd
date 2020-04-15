@@ -18,8 +18,12 @@ Inicio
 ![](img/semana_3/landing.png)
 
 
-Sobre el proyecto
+Motivación/Contactos
 =====================================  
+Row {.tabset .tabset-fade}
+-------------------------------------
+
+### Sobre el proyecto
 
 <h4><center>**Percepciones Ciudadanas acerca del Abastecimiento en el marco del Estado de Emergencia Sanitaria COVID-19:**<br>
 **Una herramienta digital para fortalecer acciones locales**<br></center></h4>
@@ -38,6 +42,36 @@ El levantamiento de datos se realiza mediante entrevistas telefónicas, personal
 
 
 Este trabajo está centrado en visualizar y canalizar las percepciones de la ciudadanía hacia tomadores de decisión y generar información para diseñar estrategias en torno al abastecimiento en el contexto de un estado de emergencia para el cual no estaba preparado el país. Ciertamente es de suma urgencia conocer las necesidades de la ciudadanía desde la experiencia cotidiana que se vive en diferentes regiones y territorios del país.
+
+### Contactos
+
+<br>
+<center>**Fundación Alternativas**
+
+Calle Lisimaco Gutierrez No. 490
+
+Edificio De Luna, Oficina 5B
+
+Sopocachi / La Paz, Bolivia
+
+[www.alternativascc.org](http://alternativascc.org/)  
+
+<br>
+**Persona de contacto:** 
+
+
+Viviana Zamora
+
++591 76757767
+
+vzamora@alternativascc.org 
+
+<br>
+**Síguenos en redes:** 
+
+<h2><center>[`r fa("facebook", fill = "steelblue")`](https://www.facebook.com/Alternativascc/)</center></h2>
+<h2><center>[`r fa("twitter", fill = "#1DA1F2")`](https://www.twitter.com/alternativascc)</center></h2>
+<h2><center>[`r fa("instagram", fill = "#e95950")`](https://www.instagram.com/alternativascc)</center></h2>
 
 
 Reporte actualizado: 13 de Abril
@@ -92,38 +126,4 @@ Llena nuestra encuesta
 El ícono te llevará a ella</h2></center>
 
 <h1><center>[`r fa("poll", fill = "black")`](https://forms.gle/j5k6rNYrtXPzCQfL9)</center></h1>
-
-
-Contactos
-=====================================  
-<br>
-<center>**Fundación Alternativas**
-
-Calle Lisimaco Gutierrez No. 490
-
-Edificio De Luna, Oficina 5B
-
-Sopocachi / La Paz, Bolivia
-
-[www.alternativascc.org](http://alternativascc.org/)  
-
-<br>
-**Persona de contacto:** 
-
-
-Viviana Zamora
-
-+591 76757767
-
-vzamora@alternativascc.org 
-
-<br>
-**Síguenos en redes:** 
-
-<h2><center>[`r fa("facebook", fill = "steelblue")`](https://www.facebook.com/Alternativascc/)</center></h2>
-<h2><center>[`r fa("twitter", fill = "#1DA1F2")`](https://www.twitter.com/alternativascc)</center></h2>
-<h2><center>[`r fa("instagram", fill = "#e95950")`](https://www.instagram.com/alternativascc)</center></h2>
-
-
-
 
