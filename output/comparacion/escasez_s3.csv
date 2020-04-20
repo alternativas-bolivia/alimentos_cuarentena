@@ -1,0 +1,25 @@
+segmento,escasea,n,prop,base,semana
+capitales,Aceites,90,5,escasez,Semana 3
+capitales,Carnes y huevos,370,21,escasez,Semana 3
+capitales,Cereales,235,14,escasez,Semana 3
+capitales,Frutas,298,17,escasez,Semana 3
+capitales,Grasas y azúcares,90,5,escasez,Semana 3
+capitales,Legumbres secas,235,14,escasez,Semana 3
+capitales,Productos lácteos,160,9,escasez,Semana 3
+capitales,Verduras,258,15,escasez,Semana 3
+intermedias,Aceites,29,9,escasez,Semana 3
+intermedias,Carnes y huevos,53,17,escasez,Semana 3
+intermedias,Cereales,38,12,escasez,Semana 3
+intermedias,Frutas,52,16,escasez,Semana 3
+intermedias,Grasas y azúcares,29,9,escasez,Semana 3
+intermedias,Legumbres secas,38,12,escasez,Semana 3
+intermedias,Productos lácteos,37,12,escasez,Semana 3
+intermedias,Verduras,42,13,escasez,Semana 3
+rurales,Aceites,16,11,escasez,Semana 3
+rurales,Carnes y huevos,24,16,escasez,Semana 3
+rurales,Cereales,14,9,escasez,Semana 3
+rurales,Frutas,24,16,escasez,Semana 3
+rurales,Grasas y azúcares,16,11,escasez,Semana 3
+rurales,Legumbres secas,14,9,escasez,Semana 3
+rurales,Productos lácteos,18,12,escasez,Semana 3
+rurales,Verduras,26,17,escasez,Semana 3

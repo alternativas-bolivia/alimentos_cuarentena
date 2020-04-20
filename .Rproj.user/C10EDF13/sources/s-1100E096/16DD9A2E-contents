@@ -1,0 +1,6 @@
+df %>% 
+  filter(!is.na(segmento)) %>% 
+  count(segmento)
+  
+  
+  
