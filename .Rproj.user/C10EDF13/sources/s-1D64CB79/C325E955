@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1588015407713.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "48016951",
+    "id" : "C325E955",
+    "lastKnownWriteTime" : 1588015543,
+    "last_content_update" : 1588015543575,
+    "path" : "~/Documents/consultorias/alimentos_cuarentena/comparador_1.Rmd",
+    "project_path" : "comparador_1.Rmd",
+    "properties" : {
+        "cursorPosition" : "9,41",
+        "scrollLine" : "8",
+        "tempName" : "Untitled2"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

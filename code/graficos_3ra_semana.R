@@ -1,5 +1,5 @@
 # sobre:visualizaciones semana 2
-source("code/semana_3.R")
+source("POTOSI.R")
 library(waffle)
 library(hrbrthemes)
 library(highcharter)
@@ -23,9 +23,6 @@ highchart(type = "map") %>%
                 color = colores[3], borderColor = "transparent") %>%
   hc_add_series(name = "Sin cobertura de encuesta", data = donde %>% filter(segmento == "Sin cobertura de encuesta"), 
                 color = colores[4], borderColor = "transparent") %>%
-  hc_title(text = "78 municipios son parte de la tercera encuesta",
-              align =  "left", style=list(fontFamily = "Roboto Condensed",
-                                            fontSize = 19)) %>% 
   hc_subtitle(text = "Mapa interactivo: vea el nombre de los municipio con el mouse y active/desactive las categorías",
            align =  "left", style=list(fontFamily = "Roboto Condensed",
                                        fontSize = 17)) %>% 
@@ -38,7 +35,7 @@ highchart(type = "map") %>%
                          fontSize = 15)) %>% 
   hc_chart(backgroundColor="#FFFFFF", style=list(fontFamily = "Roboto Condensed",
                                                  color = "black")) %>% 
-  htmlwidgets::saveWidget(here::here("img/semana_3/donde.html")) 
+  htmlwidgets::saveWidget(here::here("img/ptsi/donde.html")) 
 
 
 # ocupación: 661
@@ -76,7 +73,7 @@ ocupacion[[1]] %>%
   theme_enhance_waffle() +
   theme(legend.key.height = unit(2.25, "line")) +
   theme(legend.text = element_text(size = 10, hjust = 0, vjust = 0.75)) +
-  ggsave("img/semana_3/ocupacion_capitales.jpg", width = 8, height = 8)
+  ggsave("img/ptsi/ocupacion_capitales.jpg", width = 8, height = 8)
   
 ocupacion[[3]] %>% 
   mutate(prop = case_when(
@@ -100,7 +97,7 @@ ocupacion[[3]] %>%
   theme_enhance_waffle() +
   theme(legend.key.height = unit(2.25, "line")) +
   theme(legend.text = element_text(size = 10, hjust = 0, vjust = 0.75)) +
-  ggsave("img/semana_3/ocupacion_rurales.jpg", width = 8, height = 8)
+  ggsave("img/ptsi/ocupacion_rurales.jpg", width = 8, height = 8)
 
 
 ocupacion[[2]] %>%
@@ -121,7 +118,7 @@ ocupacion[[2]] %>%
   theme_enhance_waffle() +
   theme(legend.key.height = unit(2.25, "line")) +
   theme(legend.text = element_text(size = 10, hjust = 0, vjust = 0.75)) +
-  ggsave("img/semana_3/ocupacion_intermedias.jpg", width = 8, height = 8)
+  ggsave("img/ptsi/ocupacion_intermedias.jpg", width = 8, height = 8)
 
 # abastecimiento
 abastece %<>% 
@@ -172,7 +169,7 @@ hctreemap2(data = abastece,
   hc_credits(text = "Los colores y el tamaño de los rectángulos indican la concentración de casos para cada categoría", enabled = TRUE,
               align =  "center", style=list(fontFamily = "Roboto Condensed",
                                             fontSize = 17)) %>% 
-  htmlwidgets::saveWidget(here::here("img/semana_3/", "abastecimiento.html"))
+  htmlwidgets::saveWidget(here::here("img/ptsi/", "abastecimiento.html"))
 
 # disponibilidad
 disponibilidad %>% 
@@ -181,18 +178,6 @@ disponibilidad %>%
     segmento == "capitales" ~ "Municipios capitales y El Alto",
     segmento == "intermedias" ~ "Ciudades intermedias"
   )) %>% 
-  mutate(
-    prop = case_when(
-      segmento == "Ciudades intermedias" & disponibilidad == "Nunca fue normal" ~ 3, 
-      T ~ prop
-    )
-  ) %>%
-  mutate(
-    prop = case_when(
-      segmento == "Municipios rurales" & disponibilidad == "Nunca fue normal" ~ 14, 
-      T ~ prop
-    )
-  ) %>% 
   ggplot(aes(fill = disponibilidad, values = prop)) +
   geom_waffle(n_rows = 10, size = 0.5, colour = "white", flip = T) +
   scale_fill_manual(
@@ -215,7 +200,7 @@ disponibilidad %>%
     subtitle = "Ponderado al 100%",
     caption = "cada cuadrado equivale al 1%"
   ) +
-  ggsave("img/semana_3/disponibilidad.jpg", width = 20, height = 8) 
+  ggsave("img/ptsi/disponibilidad.jpg", width = 20, height = 8) 
 
 
 disponibilidad %>% 
@@ -271,7 +256,7 @@ temp %>%
   theme(legend.key.height = unit(2.25, "line")) +
   theme(legend.text = element_text(size = 14, hjust = 0, vjust = 0.75)) +
   theme(legend.position = "bottom") + 
-  ggsave("img/semana_3/escasez_capitales.jpg", height = 8, width = 8)
+  ggsave("img/ptsi/escasez_capitales.jpg", height = 8, width = 8)
 
 
 escasez_productos %>% 
@@ -296,7 +281,7 @@ temp %>%
   theme(legend.key.height = unit(2.25, "line")) +
   theme(legend.text = element_text(size = 14, hjust = 0, vjust = 0.75)) +
   theme(legend.position = "bottom") + 
-  ggsave("img/semana_3/escasez_intermedias.jpg", height = 8, width = 8)
+  ggsave("img/ptsi/escasez_intermedias.jpg", height = 8, width = 8)
 
 
 escasez_productos %>% 
@@ -321,7 +306,7 @@ temp %>%
   theme(legend.key.height = unit(2.25, "line")) +
   theme(legend.text = element_text(size = 14, hjust = 0, vjust = 0.75)) +
   theme(legend.position = "bottom") + 
-  ggsave("img/semana_3/escasez_rural.jpg", height = 8, width = 8)
+  ggsave("img/ptsi/escasez_rural.jpg", height = 8, width = 8)
 
 # dificultades
 dificultades %>% 
@@ -340,7 +325,7 @@ dificultades %>%
   ) %>% 
   write_csv("output/comparacion/dificultades_s2.csv")
   
-hctreemap2(data = dificultades,
+hctreemap2(data = dificultades ,
              group_vars = c("segmento", "dificultades"),
              size_var = "prop",
              color_var = "prop",
@@ -374,7 +359,7 @@ hctreemap2(data = dificultades,
   hc_credits(text = "Los colores y el tamaño de los rectángulos indican la concentración de casos para cada categoría", enabled = TRUE,
              align =  "center", style=list(fontFamily = "Roboto Condensed",
                                            fontSize = 17)) %>% 
-  htmlwidgets::saveWidget(here::here("img/semana_3/", "dificultades.html"))
+  htmlwidgets::saveWidget(here::here("img/ptsi/", "dificultades.html"))
 
 # abastecimiento hast el 15 de abril
 
@@ -415,7 +400,7 @@ abril_15 %>%
     subtitle = "Ponderado al 100%",
     caption = "cada cuadrado equivale al 1%"
   ) +
-  ggsave("img/semana_3/abril_15.jpg", width = 20, height = 8) 
+  ggsave("img/ptsi/abril_15.jpg", width = 20, height = 8) 
 
 abril_15 %>% 
   ungroup() %>% 
@@ -436,7 +421,7 @@ abril_15 %>%
     base = "abril_15", 
     semana = "Semana 2"
   ) %>% 
-  write_csv("output/comparacion/abril_15_s2.csv")
+  write_csv("output/semana_1/deptos_mapa.csv/abril_15_s2.csv")
 
 
 # gam
@@ -474,7 +459,7 @@ gam %>%
     subtitle = "Ponderado al 100%",
     caption = "cada cuadrado equivale al 1%"
   ) +
-  ggsave("img/semana_3/gam.jpg", width = 20, height = 8) 
+  ggsave("img/ptsi/gam.jpg", width = 20, height = 8) 
 
 
 gam %>% 
@@ -492,7 +477,7 @@ gam %>%
     base = "gam",
     semana = "Semana 2",
   ) %>% 
-  write_csv("output/comparacion/gam_s2.csv")
+  write_csv("output/semana_1/deptos_mapa.csv/gam_s2.csv")
 
 
 # abastecimiento treemaps

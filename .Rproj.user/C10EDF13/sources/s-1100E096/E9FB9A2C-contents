@@ -1,6 +1,0 @@
-a <- read_csv("/Users/rafalopezv/Desktop/eli/covid.csv")
-b <- read_csv("/Users/rafalopezv/Desktop/eli/data_nroPerson.csv")
-
-
-a$countriesAndTerritories %>% unique %>% length()
-b$`Country (or dependency)` %>% unique %>% length()

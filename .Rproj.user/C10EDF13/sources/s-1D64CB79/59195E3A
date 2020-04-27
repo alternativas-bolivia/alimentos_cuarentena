@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1587951786730.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "59195E3A",
+    "lastKnownWriteTime" : 1587959342,
+    "last_content_update" : 1587959342942,
+    "path" : "~/Documents/consultorias/alimentos_cuarentena/code/semana_5.R",
+    "project_path" : "code/semana_5.R",
+    "properties" : {
+        "cursorPosition" : "270,33",
+        "scrollLine" : "251"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

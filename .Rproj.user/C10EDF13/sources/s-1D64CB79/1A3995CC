@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1588001006256.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "1A3995CC",
+    "lastKnownWriteTime" : 0,
+    "last_content_update" : 1588001006256,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "49CFE5AD",
+        "caption" : "ocu1",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=ocu1&cache_key=49CFE5AD",
+        "displayedObservations" : 18,
+        "environment" : "",
+        "expression" : "ocu1",
+        "object" : "ocu1",
+        "preview" : 0,
+        "totalObservations" : 18,
+        "variables" : 6
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
